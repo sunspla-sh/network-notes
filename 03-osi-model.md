@@ -125,4 +125,35 @@
 
 ## Datalink Layer (OSI Model Layer 2)
 
+### What is the Datalink Layer?
+
+- The Datalink Layer packages data (bits from the physical layer) into frames and transmits those frames on the network.
+
+    - Additionally, the Datalink Layer also performs some error detection and correction, identifies unique network devices using MAC addresses, and provides some flow control
+
+### What is a MAC Address?
+
+- MAC address is short for Media Access Control address
+
+    - Media Access Control addressing is a system of physical addressing of devices which allows them to operate on a logical topology
+
+    - MAC addresses are unique 48-bit addresses that are assigned to Network Interface Cards (NIC) when produced by manufacturers
+
+    - MAC addresses are always represented by 12 hexidecimal numbers (48 bits), with the first 6 numbers (24 bits) representing the manufacturer of the device and the last 6 numbers (24 bits) representing the unique number of the device
+
+    - For example, in a MAC address of D2:51:F1:3A:34:65, the D2:51:F1 portion of the MAC address represents the vender code (the manufacturer of the device) and 3A:34:65 represents the unique number of the device produced by that manufacturer
+
+### What is Logical Link Control?
+
+- Logical Link Control (LLC) provides connection services and allows acknowledgement of reciept of messages
+
+    - It is the most basic form of flow control by limiting the amount of data a sender can send at once to prevent the receiver from being overwhelmed
+
+    - It allows a device to make a request for either less information at a time or for a replay of that information
+
+    - It provides basic error control functions by allowing the receiver to inform the sender that a dataframe wasn't received or if it was received corrupted, which it can verify through the use of a checksum (adding up all the bits and then verifying the parity of the result)
+
+### How is Communication synchronized on the Datalink Layer?
+
+...
 
