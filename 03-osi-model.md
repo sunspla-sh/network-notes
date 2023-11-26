@@ -155,5 +155,20 @@
 
 ### How is Communication synchronized on the Datalink Layer?
 
-...
+- Communication can be synchronized across the Datalink Layer using three different schemes
+
+    - Isochronous mode, where network devices use a common reference clock source and create time slots for transmission
+
+    - Synchronous mode, where network devices agree on clocking method to indicate beginning and end of frames and can use control characters
+
+    - Asynchronous mode, where network devices reference their own internal clocks and use start and stop bits
+
+
+### Examples of Datalink Layer Devices
+
+- Different types of media devices make up the Datalink Layer
+
+    - Network Interface Cards (using MAC addresses)
+    - Bridges
+    - Switches
 
