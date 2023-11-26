@@ -172,3 +172,64 @@
     - Bridges
     - Switches
 
+
+## Network Layer (OSI Model Layer 3)
+
+### What is the Network Layer?
+
+- The Network Layer forwards traffic (also known as routing) with logical addresses
+
+- Two examples of logical addressing are IPV4 and IPV6, although there are many more types of logical addressing
+
+- A common point of confusion when it comes to the Network Layer (Layer 3) is that this layer handles *switching*, which is another term for routing, while the Datalink Layer (Layer 2) uses physical *switches*, which are the physical devices used to move frames (packages of bits (logical zeroes and ones)) across a network
+
+- In general, the Network Layer manages the following
+
+    - Logical Addressing
+    - Switching
+    - Route Discovery and Selection
+    - Connection Services
+    - Bandwidth Usage
+    - Multiplexing Strategies
+
+### What is Logical Addressing?
+
+- Devices needed a system of logical addressing to identify eachother on networks
+
+- Historical examples of logical addressing on the Network Layer include AppleTalk (for Apple devices) and IPX (Internetwork Packet Exchange) (for Windows or Novell Network devices), both of which were popular in the 1980s/1990s
+
+- IPV4 and IPV6 became the common standard that replaced other Network Layer logical addressing systems, while some of the older systems of logical addressing may still exist in legacy devices and networks within corporations and governments
+
+- IPV4 addresses are commonly represented in dotted octet notation, e.g. 172.16.254.1
+
+### What is Switching?
+
+- Switching is the process of routing data on the Network Layer
+
+- The three main ways to route data on the Network Layer are the following
+
+    - Packet Switching
+    - Circuit Switching
+    - Message Switching
+
+- Packet Switching involves dividing data into packets and then forwarding them on to the intended receiving device
+
+    - Each packet may take a different path across the network as long as it reaches the recipient
+
+- Circuit Switching involves creating a dedicated communication link between two devices
+
+    - Data takes the same path each time during an established connection
+
+- Message Switching involves dividing data into messages which can be stored and forwarded
+
+    - Unlike packet switching, where data is destroyed if it cannot reach the intended recipient, message switching will store the data so that delivery can be attempted later
+
+- Almost all networks nowadays use Packet Switching, because we have other methods (outside of Message Switching) that allow us to check if data is reaching the recipient correctly and resend if necessary along the same path or a different path of the network
+
+    - Only big, backend networks typically use ciruit switching and message switching in addition to packet switching
+
+    - Our home networks, small office networks, and most of the internet use packet switching
+
+### What is Route Discovery?
+
+...
