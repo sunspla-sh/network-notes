@@ -453,7 +453,7 @@
 
 ### What are Application Services?
 
-- Application Services are protocols that allow user software to send and receive information across a network and sychronizes communication across user software (e.g. SMTP for email, FTP for file transfer, or HTTP for hypertext transfer)
+- Application Services are protocols and their associate processes that allow user software to send and receive information across a network and sychronizes communication across user software (e.g. SMTP for email, FTP for file transfer, or HTTP for hypertext transfer)
 
 ### What is Service Advertisement?
 
