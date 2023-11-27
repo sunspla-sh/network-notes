@@ -444,3 +444,46 @@
 
     - Transport Layer Security (TLS) protocol
     - Secure Sockets Layer (SSL) (deprecated)
+
+## Application Layer (OSI Model Layer 7)
+
+### What is the Application Layer?
+
+- The Application Layer provides application-level services where users communicate with the computer
+
+### What are Application Services?
+
+- Application Services are protocols that allow user software to send and receive information across a network and sychronizes communication across user software (e.g. SMTP for email, FTP for file transfer, or HTTP for hypertext transfer)
+
+### What is Service Advertisement?
+
+- Service Advertisement is the action of sending out announcements on a network to state the services that a device offers
+
+### Examples of Application Layer Devices, Formats, Protocols, and Standards
+
+- The Application Layer does not necessarily have devices, because operations at this layer occur logically/digitally through formats, protocols, and standards rather than physical devices
+
+- Different types of protocols and standards make up the Session Layer
+
+  - Email Protocols
+      - Post Office Protocol 3 (POP3)
+      - Internet Message Access Protocol (IMAP)
+      - Simple Mail Transfer Protocol (SMTP)
+
+  - Web Browsing Protocols
+      - HyperText Transfer Protocol (HTTP)
+      - HyperText Transfer Protocol Secure (HTTPS)
+
+  - Domain Name Service (DNS)
+
+  - File Transfer Protocols
+      - File Transfer Protocol (FTP)
+      - File Transfer Protocol Secure (FTPS)
+      - SSH File Transfer Protocol (SFTP)
+
+  - Remote Access Protocols
+      - Teletype Network Protocol (Telnet)
+      - Secure Shell Protocol (SSH)
+
+  - Network Management Protocols
+      - Simple Network Management Protocol (SNMP)
