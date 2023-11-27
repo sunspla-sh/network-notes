@@ -252,7 +252,7 @@
 
     - The most common ICMP diagnositic tool is **ping**, but **traceroute** is also used
 
-### Examples of Network Layer Devices
+### Examples of Network Layer Devices and Protocols
 
 - Different types of devices make up the Network Layer
 
@@ -261,7 +261,15 @@
 
 - Multilayer Switches work like a Datalink Layer (Layer 2) switch and a Network Layer (Layer 3) router combined into one device
 
+- Different types of protocls make up the Network Layer
+
+    - Internet Control Message Protocl (ICMP)
+    - Internet Protocol Version 4 (IPV4)
+    - Internet Protocol Version 6 (IPV6)
+
 ## Transport Layer (OSI Model Layer 4)
+
+### What is the Transport Layer?
 
 - The Transport Layer is responsible for sending **Segments** and **Datagrams** across a network
 
@@ -327,10 +335,50 @@
 
     - When buffers fill up and a router runs out of memory, segements will be dropped
 
-### Examples of Transport Layer Devices
+### Examples of Transport Layer Devices and Protocols
 
 - Different types of devices make up the Transport Layer
 
     - WAN accelerators
     - Load balancers
     - Firewalls
+
+- Different types of protocols make up the Transport Layer
+
+    - TCP
+    - UDP
+
+
+## Session Layer (OSI Model Layer 5)
+
+### What is the Session Layer?
+
+- The Session Layer keeps connections and data flows separate to prevent the intermingling of data from different sources
+
+- The Session Layer sets up sessions, maintains sessions, and tears down sessions
+
+    - Setting up a session involves checking user credentials and assigning numbers to sessions to help identify them
+
+    - Maintaining a session involves transferring data across the network, back and forth, over and over again, and also involves re-establishing dropped connections and acknowledging receipts
+
+    - Tearing down a session involves ending a session after the transfer of data is complete (through mutual agreement) or when the other party disconnects
+
+### Examples of Session Layer Devices, Protocols, and Standards
+
+- The Session Layer does not necessarily have devices, because operations at this layer occur logically/digitally through protocals and standards rather than physical devices
+
+- Different types of protocols and standards make up the Session Layer
+
+  - Real-time Transport Protocol (RTP)
+
+      - H.323 is a standard used to set up, maintain, and tear down voice and video connections (typically VoIP telephony and video conferencing), and it can be used at the Session Layer and operate over Real-time Transport Protocol (RTP)
+
+      - H.264 (also referred to as Advanced Video Coding (AVC)) is a standard used for video compression, and similarly to H.323 can be used at the Session Layer and operate over Real-time Transport Protocol (RTP)
+
+  - NetBIOS Protocol
+
+      - Previously NetBIOS Frames (NBF) Protocol over IPX (pre-IP era)
+
+      - Currently NetBIOS over TCP/IP (NBT) Protocol
+
+      - Both versions of the protocol allow for communication of data for files and printers at the Session Layer (Layer 5) and it is an API only, not a networking protocol
