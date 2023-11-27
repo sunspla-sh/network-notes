@@ -232,4 +232,31 @@
 
 ### What is Route Discovery?
 
-...
+- Routers maintain a routing table to understand how to forward how to forward a packet based on the destination IP address
+
+    - These routes can be manually configured as a static route
+
+    - Alternatively, the routes can be dynamically discovered and assigned using a routing protocol like RIP, OSPF, EIGRP, or many others
+
+### What Connection Services are provided by the Network Layer?
+
+- Connection Services in the Network Layer build on top of the connection services provided in the Datalink Layer (flow control, error correction, etc.) and add the following functionality:
+
+    - Flow Control (in addition to Datalink Layer flow control), which prevents the sender from sending data faster than the receiver can receive it
+
+    - Packet Reordering, which allows data to be divided into small packets that each might take a different path on the network and arrive out of order at different times, but then be reassembled in the correct order at the final destination
+
+### What is the Internet Control Message Protocol (ICMP)?
+
+- Internet Control Message Protocol (ICMP) is used to send messages and operational information to an IP destination for troubleshooting
+
+    - The most common ICMP diagnositic tool is **ping**, but **traceroute** is also used
+
+### Examples of Network Layer Devices
+
+- Different types of devices make up the Network Layer
+
+    - Routers
+    - Multilayer Switches
+
+- Multilayer Switches work like a Datalink Layer (Layer 2) switch and a Network Layer (Layer 3) router combined into one device
