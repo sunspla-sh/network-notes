@@ -260,3 +260,77 @@
     - Multilayer Switches
 
 - Multilayer Switches work like a Datalink Layer (Layer 2) switch and a Network Layer (Layer 3) router combined into one device
+
+## Transport Layer (OSI Model Layer 4)
+
+- The Transport Layer is responsible for sending **Segments** and **Datagrams** across a network
+
+- The Transport Layer also introduces reliability features such as **windowing** and **buffering**
+
+- Two examples of common protocols making up the Transport Layer are **Transmission Control Protocol (TCP)** and **User Datagram Protocol (UDP)**
+
+### What is Transmission Control Protocol (TCP)?
+
+- Transmission Control Protocol (TCP) is a reliable way to transport segements across a network because it asks for an acknowledgement for each segment and will resend segments if it does not receive an acknowledgement for a given segement
+
+- Transmission Control Protocol is a **connection-oriented** protocol because it requires verification that segments were received
+
+- Transmission Control Protocol (TCP) works with a three-way handshake
+
+    - The client sends a **SYN (synchronization)** packet to the server
+
+    - The server sends a **SYN-ACK (sychronization acknowledgement)** packet back to the client
+
+    - The client sends an **ACK (acknowledgement)** packet back to the server in addition to any data that it was going to send in the form of segements (collections of packets)
+
+### What is User Datagram Protocol (UDP)?
+
+- User Datagram Protocol (UDP) is an unreliable (and faster) way to transport segements across a network
+
+- User Datagram Protocol (UDP) is a **connectionless** protocol because it doesn't have to wait for connections or the verification of received datagrams (no three way handshake, unlike TCP)
+
+- When using User Datagram Protocol (UDP) in the Transport Layer (Layer 4), we use the term **datagram** instead of segment (while continuing to use the term segment for any data related to TCP and other Layer 4 protocols)
+
+- User Datagram Protocol is commonly used for audio and video streaming because it uses less bandwidth and some data loss is tolerable and likely not noticable when streaming audio and video
+
+### Summarizing the Differences Between TCP and UDP
+
+- Transmission Control Protocl (TCP)
+
+    - Reliable
+    - Connection-oriented
+    - Segment retransmission and flow control through windowing
+    - Segment sequencing
+    - Acknowledges segments
+
+- User Datagram Protocl (UDP)
+
+    - Unreliable
+    - Connectionless
+    - No windowing or retransmission
+    - No sequencing
+    - No acknowledgement
+
+### What is Windowing?
+
+- Windowing allows the client to adjust the amount of data in each segment as it goes through the transmission
+
+    - If the number of retransmissions small or zero, client will send more data in each segment (increasing the size of the window)
+
+    - If the number of retransmissions is large, client will send less data in each segement (decreasing the size of the window)
+
+### What is Buffering?
+
+- Buffering occurs when devices allocate memory to store segments if bandwidth isn't readily available
+
+    - Routers have memory that allows them to store segements if bandwidth isn't readily available for transmission, which is then emptied and transmitted when the bandwidth eventually becomes available again
+
+    - When buffers fill up and a router runs out of memory, segements will be dropped
+
+### Examples of Transport Layer Devices
+
+- Different types of devices make up the Transport Layer
+
+    - WAN accelerators
+    - Load balancers
+    - Firewalls
