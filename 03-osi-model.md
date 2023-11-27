@@ -365,7 +365,7 @@
 
 ### Examples of Session Layer Devices, Protocols, and Standards
 
-- The Session Layer does not necessarily have devices, because operations at this layer occur logically/digitally through protocals and standards rather than physical devices
+- The Session Layer does not necessarily have devices, because operations at this layer occur logically/digitally through protocols and standards rather than physical devices
 
 - Different types of protocols and standards make up the Session Layer
 
@@ -382,3 +382,65 @@
       - Currently NetBIOS over TCP/IP (NBT) Protocol
 
       - Both versions of the protocol allow for communication of data for files and printers at the Session Layer (Layer 5) and it is an API only, not a networking protocol
+
+
+## Presentation Layer (OSI Model Layer 6)
+
+### What is the Presentation Layer?
+
+- The Presentation Layer formats data that will be exchanged and secures data with proper encryption
+
+### Data Formatting
+
+- Data Formatting is done so that data will be compatable across different devices
+
+- Some common data formats are as follows:
+
+    - American Standard for Computer Information Interchange (ASCII)
+    - Graphics Interchange Format (GIF)
+    - Joint Photographic Experts Group (JPEG)
+    - Portable Network Graphics (PNG)
+
+- Data formatting that occurs on the Presentation Layer (Layer 6) allows us to negotiate data transfer syntax for the Application Layer (Layer 7)
+
+### Encryption
+
+- Encryption is used to keep data secure in transit and provide data confidentiality as it crosses the network and as it is stored
+
+    - Transport Layer Security (TLS) is an example of encryption being used to secure data before transit
+
+### Examples of Presentation Layer Devices, Formats, Protocols, and Standards
+
+- The Presentation Layer does not necessarily have devices, because operations at this layer occur logically/digitally through formats, protocols, and standards rather than physical devices
+
+- Scripting languages, Markup languages, and Stylesheet languages operate at the Presentation Layer, because they format data before it is displayed or transported across a network
+
+    - HTML (Markup Language)
+    - CSS (Stylesheet Language)
+    - JavaScript (Scripting Language)
+    - PHP (Scripting Language)
+
+- Text formats operate at the Presentation Layer
+
+    - ASCII
+    - Unicode
+    - EBCDIC
+
+- Image formats operate at the Presentation Layer
+
+    - GIF
+    - JPG (JPEG)
+    - TIF
+    - SVG
+    - PNG
+
+- Video formats
+
+    - MP4
+    - MPG
+    - MOV
+
+- Encryption protocols
+
+    - Transport Layer Security (TLS) protocol
+    - Secure Sockets Layer (SSL) (deprecated)
