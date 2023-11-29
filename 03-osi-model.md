@@ -487,3 +487,6 @@
 
   - Network Management Protocols
       - Simple Network Management Protocol (SNMP)
+
+
+## Encapsulation and Decapsulation
