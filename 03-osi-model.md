@@ -490,3 +490,30 @@
 
 
 ## Encapsulation and Decapsulation
+
+### What is Encapsulation?
+
+- Encapsulation is the process of putting headers and sometimes trailers around your data
+
+### What is Decapsulation?
+
+- Decapsulation is the process of removing headers and sometimes trailers from our data
+
+### Encapsulation vs Decapsulation
+
+- Encapsulation occurs as data moves from the highest layer of the OSI model (Layer 7) (Application Layer) to the lowest layer of the OSI model (Layer 1) (Physical Layer)
+
+- Decapsulation occurs as data moves from the lowest layer of the OSI model (Layer 1) (Physical Layer) to the highest layer of the OSI model (Layer 7) (Application Layer)
+
+### What are Protocol Data Units (PDUs)?
+
+- Protocol Data Units are single units of information transmitted in a computer network
+
+- In the OSI model, Protocol Data Units are referred to by their layer number and then the abbreviation PDU, e.g. L7 PDU
+
+- In the OSI model, there are special names for Protocol Data Units in Layer 1 (Physical Layer), Layer 2 (Datalink Layer), Layer 3 (Network Layer), and Layer 4 (Transport Layer)
+
+    - Bits (Physical Layer)
+    - Frames (Datalink Layer)
+    - Packets (Network Layer)
+    - Segments (TCP) or Datagrams (UDP) (Transport Layer)
