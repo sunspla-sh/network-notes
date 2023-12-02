@@ -517,3 +517,49 @@
     - Frames (Datalink Layer)
     - Packets (Network Layer)
     - Segments (TCP) or Datagrams (UDP) (Transport Layer)
+
+- The headers added at layers 4, 3, 2, and 1 help our message reach its final destination
+
+### PDU Headers
+
+#### Transport Layer Headers (Layer 4 Headers)
+
+- One common Transport Layer protocol is Transmission Control Protocol (TCP)
+
+- The TCP header has 10 mandatory fields, totaling 20 bytes of information:
+
+    - Source Port
+    - Destination Port
+    - Sequence Number
+    - Acknowledgement Number
+    - Offset
+    - Reserved
+    - TCP Flags
+    - Window
+    - Checksum
+    - Urgent Pointer
+    - mTCP (optional)
+
+- The TCP Control Flags are 6 different flags that are used to manage data flow before and during communication, and also to stop the communication when finished
+
+    - SYN
+        - The synchronization flag is used to synchronize connection during the three-way handshake
+    - ACK
+        - The acknowledgement flag is used during the three-way handshake and also used to acknowledge successful receipt of packets
+    - FIN
+        - The finished flag is used to tear down virtual connections created with the three-way handshake and SYN flag
+    - RST
+        - The reset flag is used when a client or server receives a packet that it was not expecting during the current connection
+    - PSH
+        - The push flag is used to ensure that data is given priority and processed at the sending or receiving ends (and is most often added to a packet at the beginning or end of a data transfer)
+    - URG
+        - The urgent flag is like the push flag and identifies incoming data as urgent (and it is an indication for the receiver to process the data immediately, unlike the push flag which simply indicates a higher priority)
+
+- Another common Transport Layer protocol is User Datagram Protocol (UDP)
+
+- The UDP header has 3 mandatory fields totaling 8 bytes of information:
+
+    - Source Port
+    - Destination Port
+    - Length
+    - Checksum (optional)
