@@ -563,3 +563,68 @@
     - Destination Port
     - Length
     - Checksum (optional)
+
+#### Network Layer Headers (Layer 3 Headers)
+
+- One common Network Layer protocol is Internet Protocol (IP) (IPv4 and IPv6)
+
+- The IPv4 header contains 12 mandatory fields, totaling between 20 and 60 bytes of information:
+
+    - Version
+        - A 4-bit version field which is always equal to 4 for IPv4
+    - Internet Header Length (IHL)
+        - Length of the header
+        - Minimum value of 5 (5 x 32 bits = 20 bytes)
+        - Maximum value of 15 (15 x 32 bits = 60 bytes)
+    - Differentiated Services Code Point (DSCP)
+        - Originally defined as Type of Service (ToS)
+        - This field specifies differentiated services (DiffServ)
+        - Real-time data streaming such as Voice over IP (VoIP) makes use of this field
+    - Explicit Congestion Notification (ECN) (optional)
+        - Allows end-to-end notification of network congestion without dropping packets
+        - Only available when both endpoints support it and effective when supported by underlying network
+    - Total Length
+        - A 16-bit field that defines the entire packet size in bytes, including header and data
+        - Minimum size is 20 bytes (header without data)
+        - Maximum size is 65,535 bytes
+        - All hosts are required to be able to reassemble packets up to 576 bytes, but modern hosts often handle larger packets
+    - Identifier
+        - Primarily used for uniquely identifying group of fragments of a single IP packets
+    - Flags
+        - A 3-bit field used to control or identify fragments
+    - Fragment Offset
+        - Specifies the offset of a particular fragment relative to the beginning of the original unfragmented datagram
+    - Time to Live
+        - An 8-bit field used to limit a packet's life to prevent network failure in the event of a routing loop
+        - Specified in seconds and times less than one second are rounded up to one
+        - In practice, the field is used as a hop count - when the packet arrives at a router this field is decremented by one and discards the packet if the field hits zero
+    - Protocol
+        - Defines the protocol used in the data portion of the packet
+    - Header Checksum
+        - A 16-bit field used for error checking of the header
+        - Errors in the data portion of the packet are handled separately by the encapsulated protocol
+        - This field needs to be re-calculated by routers when they decrement the Time to Live field
+    - Source IP Address
+        - A 32-bit field representing the IPv4 address of the sender
+    - Destination IP Address
+        - A 32-bit field representing the IPv4 address of the receiver
+    - Options and Padding (optional)
+
+#### Datalink Layer Headers (Layer 2 Headers)
+
+- One common Datalink Layer protocol is Ethernet
+
+- The Ethernet header contains 3 mandatory fields, totaling X bytes of information:
+
+    - Destination MAC Address
+        - A physical address used to identify the network card on a local area network
+    - Source MAC Address
+        - A physical address used to identify the network card on a local area network
+    - EtherType
+        - A field used to indicate which protocol is encapsulated in the frame, frequently IPv4 or IPv6
+    - VLAN Tag (Optional)
+        - Minimum frame payload (in addition to the header) is 42 bytes if VLANs are being used
+        - Minimum frame payload (in addition to the header) is 46 bytes if no VLANs are being used
+
+- By default, Ethernet has a maximum payload of 1500 bytes, referred to as a Maximum Transmission Unit (MTU)
+    - This can be increased up to 9000 bytes, known as a Jumbo Frame (any frame between 1500 and 9000), or even larger up to a theoretical maximum of 65,535 bytes, known as a Super Jumbo Frame (any frame over 9000)
