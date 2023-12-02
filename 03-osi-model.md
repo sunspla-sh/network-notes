@@ -39,7 +39,7 @@
 
 ### What is the Physical Layer?
 
-- The physical layer of the OSI model is the layer where transmission of bits (logical zeroes and ones) across the network occurs and it includes the physical and electrical network characteristics
+- The Physical Layer of the OSI model is the layer where transmission of bits (logical zeroes and ones) across the network occurs and it includes the physical and electrical network characteristics
 
     - These physical and electrical network characteristics are things such as copper cabling, fiber optic cabling, and the various electrical voltages (in the case of copper cabling) or photons (in the case of fiber optic cabling) that travel across them and represent bits (logical zeroes and ones)
 
