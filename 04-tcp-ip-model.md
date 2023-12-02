@@ -67,4 +67,21 @@
     - SMTP
     - SSL/TLS
 
-    
+## Data Transfer over Networks
+
+### What is a Port?
+
+- Ports are logical openings on a system representing a service or application that is listening and waiting for traffic
+
+    - Ports are numbered from 0 to 65,535
+    - Well-known/Reserved ports are from 0 to 1023 and some examples are listed here:
+        - FTP on port 21
+        - HTTP on port 80
+        - SMTP on port 25
+    - Ephemeral ports are from 1024 to 65,535
+
+- Data Transfer occurs using ports and IP addresses
+    1. Client has a source IP address and a source port (random high port number opened specifically for the connection)
+    2. Client sends data to a destination IP Address and destination port, which is port 80 in the case of web servers
+    3. Web Server has a source IP address and source port (80) 
+    4. Web Server sends data to a destination IP Address and destination port, which are the Client source IP Address and Port (the same random high port number that the client initially used) (the port is closed by the client after receiving the response from the web server)
