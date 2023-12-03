@@ -85,3 +85,121 @@
     2. Client sends data to a destination IP Address and destination port, which is port 80 in the case of web servers
     3. Web Server has a source IP address and source port (80) 
     4. Web Server sends data to a destination IP Address and destination port, which are the Client source IP Address and Port (the same random high port number that the client initially used) (the port is closed by the client after receiving the response from the web server)
+
+## Ports and Protocols
+
+### What are the 28 Ports and Protocols on the Network+ Exam?
+
+- File Transfer Protocol (FTP)
+    - Ports 20, 21
+        - Provides insecure file transfers
+
+- Secure Shell (SSH)
+    - Port 22
+        - Provides secure remote control of another machine using a text-based environment
+
+- Secure File Transfer Protocol (SFTP)
+    - Port 22
+        - Provides secure file transfers
+
+- Telnet
+    - Port 23
+        - Provides insecure remote control of another machine using a text-based environment
+
+- Simple Mail Transfer Protocol (SMTP)
+    - Port 25
+        - Provides the ability to send emails over the network
+
+- Domain Name Service (DNS)
+    - Port 53
+        - Converts domain names to IP addresses, and IP addresses to domain names
+
+- Dynamic Host Configuration Protocol (DHCP)
+    - Ports 67, 68
+        - Automatically provides network parameters to clients, such as assigned IP address, subnet mask, default gateway, and DNS server
+
+- Trivial File Transfer Protocol (TFTP)
+    - Port 69
+        - Allows bi-directional lightweight file transfer for sending configuration files or network booting of an operating system (no authentication or directory visibility)
+
+- HyperText Transfer Protocol
+    - Port 80
+        - Insecure web browsing
+
+- Post Office Protocol Version Three (POP3)
+    - Port 110
+        - Used to receive incoming emails
+
+- Network Time Protocol (NTP)
+    - Port 123
+        - Used to keep accurate time for clients on a network
+
+- Network Basic Input/Output System (NetBIOS)
+    - Port 139
+        - Used for file or printer sharing in a Windows network
+
+- Internet Mail Application Protocol (IMAP)
+    - Port 143
+        - Method of retrieving incoming emails which improves upon the older POP3 method
+
+- Simple Network Management Protocol (SNMP)
+    - Ports 161, 162
+        - Used to collect data about network devices and monitor their status
+
+- Lightweight Directory Access Protocol (LDAP)
+    - Port 389
+        - Used to provide directory information services to a network (in an open-source manner, as opposed to Windows Active Directory, which is a proprietary version of LDAP), e.g. searching for internal company email addresses and users in an email client address book on a business computer
+
+- HyperText Transfer Protocol Secure (HTTPS)
+    - Port 443
+        - Secure web browsing (using either TLS (newer) or SSL (older))
+
+- Server Message Block (SMB)
+    - Port 445
+        - Used for Windows file and printer sharing services (often operates with NetBIOS, which does authentication over port 139 while SMB handles the actual passing of the files)
+
+- System Logging Protocol (Syslog)
+    - Port 514
+        - Used to send logging data back to a centralized server
+
+- Simple Mail Transfer Protocol Transport Layer Security (SMTP TLS)
+    - Port 587
+        - Secure and encrypted way to send emails (and not technically its own protocol, rather it is regular SMTP wrapped in TLS)
+
+- Lightweight Directory Access Protocol - Secure (LDAPS)
+    - Port 636
+        - Provides secure directory services
+
+- Internet Message Access Protocol over SSL (IMAP over SSL)
+    - Port 993
+        - Secure and encrypted way to receive emails
+
+- Post Office Protocol Version Three over SSL (POP3 over SSL)
+    - Port 995
+        - Secure and encrypted way to receive emails
+
+- Microsoft SQL Server (MSSQL)
+    - Port 1433
+        - Used for communication from a client to a Microsoft SQL server database engine
+
+- Oracle Net Services (formerly known as SQLnet protocol)
+    - Port 1521
+        - Used for communication from a client to an Oracle database
+
+- MySQL Protocol
+    - Port 3306
+        - Used for communication from a client to a MySQL server database engine
+
+- Remote Desktop Protocol (RDP)
+    - Port 3389
+        - Provides graphical remote control of another client or server
+
+- Session Initiation Protocol (SIP)
+    - Ports 5060, 5061
+        - Used to initiate VoIP and video calls
+
+
+
+
+
+
