@@ -198,8 +198,22 @@
     - Ports 5060, 5061
         - Used to initiate VoIP and video calls
 
+### Finding Open Ports
+
+#### nmap
+
+- ```nmap``` is a network mapping tool used scan computers on a network to determine which ports are open (and which services are using those ports)
+
+- Useful ```nmap``` commands are listed here:
+    - ```sudo nmap -v -sSU -O 127.0.0.1 -p-```
+        - Scans all ports on localhost for TCP and UDP, plus lists the operating system of the scanned computer
+    - ```sudo nmap -v -T4 -A 127.0.0.1```
+        - Intensive TCP scan that generates more data about open ports and the services running on them
 
 
+#### netstat
 
+- ```netstat``` is a network statistics tool used to list active connections to and from a computer (including the ports and program names/pids that created those connections)
 
-
+- Useful ```netstat``` commands are listed here:
+    - ```sudo netstat -4plunt```
