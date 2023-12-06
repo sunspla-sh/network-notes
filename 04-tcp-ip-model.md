@@ -198,9 +198,9 @@
     - Ports 5060, 5061
         - Used to initiate VoIP and video calls
 
-### Finding Open Ports
+## Finding Open Ports
 
-#### nmap
+### nmap
 
 - ```nmap``` is a network mapping tool used scan computers on a network to determine which ports are open (and which services are using those ports)
 
@@ -211,9 +211,55 @@
         - Intensive TCP scan that generates more data about open ports and the services running on them
 
 
-#### netstat
+### netstat
 
 - ```netstat``` is a network statistics tool used to list active connections to and from a computer (including the ports and program names/pids that created those connections)
 
 - Useful ```netstat``` commands are listed here:
     - ```sudo netstat -4plunt```
+
+## IP Protocol Types
+
+### TCP Review
+
+- Transmission Control Protocol (TCP) operates at layer 4 of the OSI model and operates by conducting a three way handshake between client and server to establish a connection
+
+    - Client and Server constantly negotiate how much data can be received through a method known as **windowing**
+
+    - Client must acknowledge to server that all segments were received through an ACK flag in a TCP header, but ACK does not have to occur for every segment immediately and one ACK may acknowledge multiple segments
+
+    - Server **window** defines how much data it can send before it *must* receive an ACK
+
+    - TCP is considered to be a *connection-oriented* protocol because of the ACK requirements
+
+### UDP Review
+
+- User Datagram Protocol (UDP) operates at layer 4 of the OSI model and operates without acknowledgements between the client and server and without verification of the ordering of the datagrams that the server sends to the client
+
+  - UDP is preferable in specific use cases such as streaming audio and video because the lack of acknowledgements and smaller header allows higher throughput
+
+  - UDP is considered to be a *connectionless* protocol because there is no acknowledgement that the client recieved datagrams from the server
+
+### What is Internet Control Message Protocol?
+
+- Internet Control Message Protocol (ICMP) is a Network Layer (Layer 3) protocol that is used to communicate information about network connectivity issues back to the sender
+
+  - ICMP is listed as protocol #1 in the TCP/IP model
+
+  - ICMP reports on the following issues
+
+      - Dropped packets (when packets are arriving too fast to be processed)
+
+      - Connectivity issues (when a destination host cannot be reached)
+
+      - Redirection (which tells a sending host to use another router)
+
+  - An example of a program that uses ICMP is ```ping```, which is often used as a network troubleshooting tool to determine connectiviity
+
+  - ICMP is also used by attackers to conduct ping scans and network mapping
+
+
+
+  
+
+  -
