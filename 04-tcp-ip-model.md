@@ -240,7 +240,7 @@
 
   - UDP is considered to be a *connectionless* protocol because there is no acknowledgement that the client recieved datagrams from the server
 
-### What is Internet Control Message Protocol?
+### What is Internet Control Message Protocol (ICMP)?
 
 - Internet Control Message Protocol (ICMP) is a Network Layer (Layer 3) protocol that is used to communicate information about network connectivity issues back to the sender
 
@@ -258,8 +258,42 @@
 
   - ICMP is also used by attackers to conduct ping scans and network mapping
 
+### What is Generic Routing Encapsulation (GRE) Protocol?
 
+- Generic Routing Encapsulation procotol is a simple and effective way to create a tunnel (known as a GRE tunnel) over a public network
 
-  
+    - When a GRE tunnel is established at the router level, you need to take into account maximum transmission unit (MTU) size
 
-  -
+        - Typically you might use an MTU of ~1400 bytes so that even with extra encapsulation, the total size does not go over ~1500 bytes, which is often the pre-configured MTU limit for many network devices
+
+    - GRE tunnels do **not provide any encryption**
+
+### What is Internet Protocol Security (IPSec)?
+
+- IPSec is a set of secure communication protocols and is used to protect one or more data flows between two peers
+
+- IPSec authenticates and encrypts IP packets, which means that it operates at the Network Layer (Layer 3) of the OSI Model and at the Internet Layer (Layer 2) of the TCP/IP Model
+
+- IPSec provides the following properties:
+
+    - Data Confidentiality
+
+    - Data Integrity
+
+    - Origin Authentication
+
+    - Anti-replay
+
+- Like GRE, IPSec allows the creation of tunnels over public networks, but unlike GRE, IPSec **allows for encryption** of those tunnels, so it is often used to form virtual private networks (VPNs)
+
+- IPSec uses the following two underlying protocols:
+
+    - Authentication Headers (AH)
+
+        - Authentication Header protocol provides integrity and authentication for packets
+
+        - AH works by hashing the normal IP header and the data payload, and then uses that hash to create the new AH header which is appended to the packet and used by the receiving router for verification of data integrity
+
+    - Encapsulating Security Payloads (ESP)
+
+        - Encapsulating Security Payload protocol provides encryption and integrity for packets
