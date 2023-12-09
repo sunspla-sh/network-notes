@@ -289,3 +289,40 @@
     - Non-plenum rated cables are known as PVC cables
 
 ## Building A Cable
+
+### Straight-through Cable Color Order
+
+- On both ends of the cable
+
+    1. Orange-white
+    2. Orange
+    3. Green-white
+    4. Blue
+    5. Blue-white
+    6. Green
+    7. Brown-white
+    8. Brown
+
+### Crossover Cable Color Order
+
+- On one end of the cable
+
+    1. Orange-white
+    2. Orange
+    3. Green-white
+    4. Blue
+    5. Blue-white
+    6. Green
+    7. Brown-white
+    8. Brown
+
+- On the other end of the cable
+
+    1. Green-white
+    2. Green
+    3. Orange-white
+    4. Blue
+    5. Blue-white
+    6. Orange
+    7. Brown-white
+    8. Brown
