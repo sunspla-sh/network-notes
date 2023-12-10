@@ -326,3 +326,177 @@
     6. Orange
     7. Brown-white
     8. Brown
+
+## Fiber Media
+
+### Overview
+
+### Fiber Optic Cables
+
+- Fiber Optic Cables use light from a light-emitting diode (LED) or laser to transmit information through a thin glass fiber
+
+    - There is little to no interference in Fiber Optic cables because we are using glass and light to transmit the data rather than metal wires and voltages
+
+    - The range of Fiber Optic cables in on the order of hundreds of meters to hundreds of miles (as compared to less than one hundred meters for copper wires)
+
+    - The data capacity of Fiber media is on the order of terabits per second (which is an improvement compared to the megabits per second or gigabits per second of copper media)
+
+        - Speeds of up to one petabit per second have been reached with fiber in controlled experiments
+
+        - At these high speeds with fiber media, its usually the other networking equipment that becomes the bottleneck such as switches, routers, and end-user devices
+
+- Drawbacks of Fiber Optic Cables include the following:
+
+    - Expensive
+
+        - On the order of 5x to 10x more expensive than copper cables
+
+    - More difficult to work with
+
+        - Harder and more expensive to build and repair than copper cables
+
+### Categories of Cables
+
+- There are two main types of fiber optic cables
+
+    - Single mode
+
+    - Multimode
+
+#### Single Mode Fiber (SMF)
+
+- Single Mode Fiber is used for longer distances and has smaller core size which allows for only a single mode of travel for the light signal
+
+    - Core size of 8.3-10µm (micrometers)
+
+    - Allows a more precise signal transmission over a longer distance because light is focused down the narrow core and is not dispersed throughout a larger cross-section
+
+#### Multimode Fiber (MMF)
+
+- Multimode Fiber is used for shorter distances and has larger core size which allows for multiple modes of travel for the light signal
+
+    - Core size of 50-100µm (micrometers)
+
+    - Used for shorter distances of 2 kilometers or less
+
+    - Multimode fibers can typically be used anywhere you would use a copper patch (straight-through) cable instead, such as connecting routers to switches, switches to switches, switches to servers, etc.
+
+### Comparing SMF and MMF
+
+- Multimode Fiber (MMF)
+
+    - Larger core size
+
+    - Covers shorter distances
+
+    - Less expensive
+
+    - Typically has an aqua-blue or orange colored sheath
+
+- Single Mode Fiber (SMF)
+
+    - Smaller core size
+
+    - Covers longer distances
+
+    - More expensive
+
+    - Typically has a yellow colored sheath
+
+### Fiber Optic Connectors
+
+- There are 4 different connector types for fiber optic cables:
+
+    - SC (Subscriber Connector)
+
+    - ST (Straight Tip)
+
+    - LC (Lucent Connector)
+
+    - MTRJ (Mechanical Transfer Registered Jack)
+
+        - Smaller form factor than the other three (about half the size) allowing for 24 ports instead of 12 ports in switches
+
+- There are two different types of connector faces
+
+    - APC (Angled Physical Contact)
+
+        - Fiber endface is polished at an 8 degree angle
+
+        - Better overall signal with less overall noise
+
+        - SC connectors typically use APC
+
+        - Identified by a green colored connector
+
+    - UPC (Ultra Physical Contact)
+
+        - No fiber endface angling, but polished with a curvature for better core alignment when plugged into a jack
+
+        - Slightly more noise and slightly worse signal
+
+        - MTRJ connectors typically use UPC
+
+        - Identified by a blue colored connector
+
+
+### Wavelength Division Multiplexing (WDM)
+
+- Wavelength Division Multiplexing combines multiple signals into one signal and sends it over a single fiber optic strand using different wavelengths of the laser light source
+
+    - Allows for bidirectional communication over a single strand
+
+    - Increases bandwidth and capacity
+
+- Transmitting end uses a multiplexer to combine several light signals together before sending across the fiber, which is then received by a demultiplexer on the receiving end and split into its component signals again
+
+- Most WDM is run over single mode fibers, but there are a few types of WDM that can run over multimode fibers as well
+
+- There are two main types of Wavelength Division Multiplexing (WDM):
+
+    - Coarse WDM
+
+    - Dense WDM
+
+#### Coarse WDM (CWDM)
+
+- Coarse WDM is used mainly in shorter distance applications of up to 70 kilometers, but you can only use 8 of the 18 total channels if above 40 kilometers and less than 70 kilometers
+
+    - Wavelength Channels
+
+        - Up to 18 channels (max 40 kilometers)
+
+        - Up to 8 channels (between 40 and 70 kilometers) (because the light spreads out and creates more noise over longer distances)
+
+    - Channel Distance
+
+        - 20nm
+
+    - Speed
+
+        - Up to 10 Gbps (Ethernet)
+
+        - Up to 16 Gbps (Fiber)
+
+- CWDM is sometimes used to connect routers and switches using GBIC or SFF transceivers (which will be explained in the next section of notes 😁) with longer distances than you could using copper cable
+
+#### Dense WDM (DWDM)
+
+- Dense WDM is used to transport data over much longer distances as the connections can be amplified every 80-100km as they're going across the cable
+
+    - Wavelength Channels
+
+        - Up to 80 channels
+
+    - Channel Distance
+
+        - 0.8nm
+
+    - Speed
+
+        - Up to 8 Tbps (100 Gbps per channel)
+
+- DWDM is extremely expensive, so it only makes sense for large service providers who are running SONET (Synchronous Optical Networking) systems, and you likely won't find it in small office, home office, or corporate office environments
+
+## Transceivers
+
