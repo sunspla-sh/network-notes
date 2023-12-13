@@ -498,5 +498,67 @@
 
 - DWDM is extremely expensive, so it only makes sense for large service providers who are running SONET (Synchronous Optical Networking) systems, and you likely won't find it in small office, home office, or corporate office environments
 
-## Transceivers
+## Transceivers (Media Converters)
 
+### Overview
+
+- A Media Converter, also known as a Transceiver, converts media from one format to another (e.g. copper to fiber or fiber to copper)
+
+- Media Converters/Transceivers are Physical Layer (OSI Model Layer 1) devices because all they do is convert media and repeat the signal
+
+### Communication Types
+
+- Bidirectional (Half-Duplux) Communication
+
+    - In Bidirectional communication, also known as Half-Duplex communication, devices must take turns to communicate
+
+        - Only one side of the communication uses all the bandwidth at a given time
+
+- Duplex (Full-Duplex) Communication
+
+    - In Duplex communication, also known as Full-Duplex communication, devices are able to communicate at the same time
+
+### Transceiver Types
+
+- Gigabit Interface Converter (GBIC) Module
+
+    - In routers and switches, Gigabit Interface Converter (GBIC) modules are standard, hot-pluggable gigabit ethernet transceivers that can 
+    take copper or fiber as a connector
+
+- Small Form-factor Pluggable (SFP) Module
+
+    - In routers and switches, Small Form-factor Pluggable modules are hot-pluggable modules (meaning that they can be swapped without turning on/off the router/switch) with optical converters that are approximately half the size of GBIC modules (and sometimes called mini-GBICs because of that)
+
+        - Speeds up to 4.2 Gbps
+
+- Small Form-factor Pluggable Plus (SFP+) Module
+
+    - A faster version of the SFP module
+
+        - Speeds up to 16 Gbps
+
+- Quad Small Form-factor Pluggable (QSFP) Module
+
+    - A faster version of the SFP module
+
+        - Speeds up to 40 Gbps
+
+- Quad Small Form-factor Pluggable Plus (QSFP+) Module
+
+    - A faster version of the SFP module
+
+        - Speeds up to 41.2 Gbps
+
+- Quad Small Form-factor Pluggable 28 (QSFP28) Module
+
+    - A faster version of the SFP module
+
+        - Speeds up to 100 Gbps
+
+- Quad Small Form-factor Pluggable 56 (QSFP56) Module
+
+    - A faster version of the SFP module
+
+        - Speeds up to 200 Gbps
+
+## Cable Distribution
