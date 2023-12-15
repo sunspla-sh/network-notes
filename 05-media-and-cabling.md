@@ -562,3 +562,33 @@
         - Speeds up to 200 Gbps
 
 ## Cable Distribution
+
+### Overview
+
+- Cable Distribution Systems are organized systems that connect a network's backbone in the main distribution frame (MDF) to the intermediate distribution frame (IDF) and finally to the end user's wall jacks
+
+    - Cable Distribution Systems should be hierarchical in nature so that each cable run is logically placed safely, securely, and functionally inside a building
+
+### Components of Cable Distribution Systems
+
+- Entrance Facilities
+
+    - Location where WAN (wide area network) connection enters a given building
+
+    - This is a **Demarcation Point**, which is where an internet service provider's connection ends and our network begins
+
+- Backbone Switch
+
+    - Device that connects to everything on the network
+
+        - Can be the only switch in a small organization
+
+        - Can be a switch that connects to other "edge" switches in a large organization of hundreds to thousands of end users
+
+            - Edge switchs connect to the backbone switch using a trunk line
+
+- Main Distribution Frame (MDF)
+
+    - A telecommunications closet which serves as the main starting point for all interior cabling
+
+    - Typically in a commercial setting, this is where the **Entrance Facilities** and **Backbone Switch** is located
