@@ -659,4 +659,14 @@
 
 ### Wiring a Network
 
+- Keystone modules for networking use mini 110 Blocks on one side and a standard RJ45 connectors on the other
+
+    - Wall cables run from a punchdown block on the back of a patch panel to the keystone module, where the other end of the cable is punched down into the backside of the keystone module
+
+    - After wiring the patch panel to the keystone module, the keystone module is inserted into a wall plate and clicks into place, with the front-facing side of the wall plate now exposing the standard RJ45 connector to the room in which it is installed
+
+### Testing a Network
+
+- Fox-and-Hound Probes, also known as Toner probes, send a signal down a wire and then are able to listen for that signal at various points along the wire and emit a noise for finding breaks and other troubleshooting
+
         
