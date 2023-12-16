@@ -592,3 +592,71 @@
     - A telecommunications closet which serves as the main starting point for all interior cabling
 
     - Typically in a commercial setting, this is where the **Entrance Facilities** and **Backbone Switch** is located
+
+- Intermediate Distribution Frame (IDF)
+
+    - Smaller distribution frames that branch off of the main distribution frame (for example, there might be one IDF per floor in a large office building)
+
+    - Contains an edge switch, a patch panel, and other associated equipment to support the floor and offices nearest to it
+
+- Cable Trays
+
+    - Rigid structural system to securely support cables and raceways throughout a building
+
+    - Typically located in a drop ceiling or under a raised floor
+
+- Punchdown Blocks
+
+    - There are 4 main types of punchdown blocks used in networking
+
+        - 66 Block (M Block)
+
+            - Used in older analog telephone systems and older CAT3 networks (and originally developed in the 1962)
+
+            - Supports a 25-pair cable that would run to an MDF or IDF
+
+        - 110 Block
+
+            - Supports high speed data networks for CAT5 and above
+
+            - Used for both voice and data
+
+            - Includes the use of insulation displacement contract connectors
+
+        - Krone Block
+
+            - Proprietary European alternative to 110 block
+
+            - Originally developed in the 1970s by The Krone Group (a German communication company)
+
+        - BIX Block
+
+            - Proprietary punchdown block available in various sizes
+
+            - Originally developed in the 1970s by Nortel Networks (a Canadian communication company)
+
+- Punchdown Tool
+
+    - Used to insert cables into the blades of punchdown blocks
+
+    - Sometimes also has a small blade to chop off excess wire after it is inserted into the blades of the punchdown block
+
+- Patch Panel (for copper media)
+
+    - Keeps a data center or server room organized by making it easy to move, add, or change cable distribution infrastucture
+
+    - Best practice is to always connect wall cables into a 110 Block or the back of a patch panel, then use a patch cable to connect the patch panel to any switches
+
+        - Connecting to a 110 Block or Patch Panel prevents wearing out the switch ports from consistent plugging and unplugging, which is beneficial because Patch Panels and 110 Blocks are much cheaper to replace compared to switches
+
+        - Patch Panel to Switch connections with patch cables will rarely need to be plugged or unplugged
+
+- Fiber Distribution Panels
+
+    - Converts fiber connections from one type to another
+
+    - Unlike Patch Panels for copper media, there are no punchdowns, only fiber connectors on either side of the panel
+
+### Wiring a Network
+
+        
