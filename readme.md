@@ -15,3 +15,7 @@
 - [03: OSI Model](./03-osi-model.md)
 
 - [04: TCP/IP Model](./04-tcp-ip-model.md)
+
+- [05: Media and Cabling](./05-media-and-cabling.md)
+
+- [06: Ethernet Fundamentals](./06-ethernet-fundamentals.md)
