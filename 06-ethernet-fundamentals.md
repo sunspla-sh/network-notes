@@ -201,5 +201,69 @@
 
 ## Network Infrastructure Devices
 
-    
+### Identifying Network Infrastructure Devices
+
+- Hubs
+
+    - Hubs, also known as *multiport repeaters*, are Physical Layer (OSI Model Layer 1) devices that connect multiple network devices and workstations
+
+    - On charts, hubs can be identified by a **square icon with two arrows pointing in opposite directions**
+
+    - Three different types of Hubs:
+
+        - Passive
+
+            - Repeats signal with no amplification
+
+            - Because there is no amplification, a 75 meter cable connected to a 50 meter cable by a passive hub would be the equivalent of a 125 meter cable and therefore our network would not work well as it is over the 100 meter limit
+
+        - Active
+
+            - Repeats signal with amplification
+
+            - Because there is amplification, a 75 meter cable connected to a 50 meter cable by an active hub (for a total of 125 meters) will work fine as the active hub restarts the 100 meter limit
+
+        - Smart
+
+            - Similar to an active hub because it repeats signal with amplification, but also has enhanced features like SNMP (Simple Network Management Protocol) which allows it to be remotely configured
+
+    - Hubs do NOT break up collision domains, instead they connect them, which becomes a problem when working with larger networks
+
+- Bridges
+
+    - Bridges are Datalink Layer (OSI Model Layer 2) devices that analyze source MAC addresses and make intelligent forwarding decisions based on the destination MAC in a given frame
+
+    - Bridges break up collision domains into smaller collision domains
+
+    - On charts, bridges can be identified by a **square icon with a semi-circle cutout**
+
+- Switches
+
+    - Switches, also known as multiport bridges, are Datalink Layer (OSI Model Layer 2) devices that connect multiple network segments together (by acting as both a hub and a bridge)
+
+    - Each port on a switch represents an individual collision domain, but each device connected to the switch by those ports is a part of the same broadcast domain
+
+    - Switches only know about Layer 2 and MAC Addresses, so they won't be used for connecting to external networks using protocols like IPV4 or IPV6
+
+    - On charts, switches can be identified by a **square icon with four arrows, two pointing in on direction and another two pointing in the opposite direction**
+
+- Routers
+
+    - Routers are Network Layer (OSI Model Layer 3) devices that connect multiple networks and make forwarding decisions based on logical network information
+
+    - Routers separate our broadcast domains and improve the efficiency of our networks by doing so
+
+    - On charts, routers can be identified by a **circle icon with four arrows, two pointing inwards and another two pointing outwards**
+
+- Layer 3 Switches
+
+    - Layer 3 Switches are Network Layer (OSI Model Layer 3) devices that make layer 3 routing decisions and then interconnect entire networks, not just network segments like traditional layer 2 switches
+
+    - Each port on a Layer 3 Switch acts as its own broadcast domain and its own collision domain
+
+    - Layer 3 Switches are not as efficient at routing as a traditional Router, so it's best not to use them in larger networks
+
+    - On charts, Layer 3 Switches can be identified by a **square icon with many arrows all pointing outwards from the center**
+
+## Hands-on With Devices
 
