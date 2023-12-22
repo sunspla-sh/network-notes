@@ -267,3 +267,181 @@
 
 ## Hands-on With Devices
 
+### Home Devices
+
+- Combination Device
+
+    - Most homes will have a single combination device that acts as a media converter, switch, router, and frequently also as a wireless access point
+
+
+### Corporate Office Devices
+
+- Most corporate offices and some homes use separate devices instead of a combination device
+
+  - Media Converters
+
+      - Media Converters will convert two dissimilar signals of any format, e.g. fiber to cable, cable to ethernet, fiber to ethernet, HDMI to ethernet, etc
+
+          - Fun fact: HDMI only has a ~20 foot (~7 meter) range, so it's best to convert from HDMI to ethernet at the source for longer distances and then back to HDMI at the receiving destination
+
+  - Switches
+
+      - Switches can be small or large, with as few as 3 ports or as many as 52 ports
+
+  - Wireless Access Points (WAP)
+
+      - Traditional wireless access points are simple media converters that go from copper media to wireless, typically having an RJ45 connection on the side, although there are other types of wireless access points that convert between other types of media and wireless
+
+## Additional Ethernet Switch Features
+
+### Overview
+
+- Additional Ethernet Switch features include the following:
+
+    - Virtual LANs (VLANs)
+
+    - Trunking
+
+    - Spanning Tree Protocol (STP)
+
+    - Link Aggregation
+
+    - Power over Ethernet (PoE)
+
+    - Port Monitoring
+
+    - User Authentication
+
+- The additional features of Ethernet Switches improve capabilities in the following areas:
+
+    - Network performance
+
+    - Redudancy
+
+    - Security
+
+    - Management
+
+    - Flexibility
+
+    - Scalability
+
+### Link Aggregation (IEEE 802.3ad)
+
+- Link Aggregation combines multiple physical connections into a single logical connection to minimize congestion
+
+    - For example, on a 24 port 100 Mbps switch, we can hit bandwidth limits if more than one connected device is trying to operate at a full 100 Mbps, but there is only one outgoing 100 Mbps connection to another switch
+    
+        - We can work around this outgoing limitation by combining multiple ports of the switch into a single, larger logical connection to provide more bandwidth (e.g. turning ports 1-4 of the switch into a single logical connection with a bandwidth of 400 Mbps, thus allowing up to 4 switch-connected devices to communicate at their full, individual 100 Mbps each at once)
+
+        - Theoretically we could still hit limits with this larger logical connection, but it is unlikely that many devices on the switch will be operating with their full 100 Mbps simultaneously
+
+### Power over Ethernet
+
+#### Power over Ethernet (PoE 802.3af)
+
+- Power over Ethernet (PoE) supplies electrical power over ethernet and requires CAT5 or higher copper cable with RJ45 connector
+
+  - Provides up to 15.4 watts
+
+#### Power over Ethernet+ (PoE 802.3at)
+
+- Power over Ethernet+ (PoE+) supplies electrical power over ethernet and requires CAT5 or higher copper cable with RJ45 connector
+
+  - Provides up to 25.5 watts
+
+#### Power Sourcing Equipment (PSE)
+
+- Power Sourcing Equipment is the equipment (in this case, Ethernet Switches) providing the power to devices
+
+#### Powered Device (PD)
+
+- Powered Devices are the Ethernet-connected devices that are receiving power, often VoIP phones or Wireless Access Points
+
+### Port Monitoring / Port Mirroring
+
+- Port Monitoring, also known as Port Mirroring, makes a copy of all traffic destined for a port and sends it to another port
+
+    - On a hub, collecting traffic data is simple because the hub will rebroadcast to all ports
+
+    - On switches, port monitoring/port mirroring can be configured so that, for example, ports 1-23 of a 24 port switch handle network traffic and port 24 is a network analyst machine that receives copies of all traffic on ports 1-23
+
+        - This setting must be configured because switches, unlike hubs, do not normally rebroadcast on all ports in order to improve overall network efficiency
+
+- Port monitoring/port mirroring is used to improve network security
+
+### User Authentication (802.1x)
+
+- User Authentication requires users to authenticate themselves before being able to gain access to the network
+
+- User Authentication Flow:
+
+    - Switch-level authentication requires that the supplicant (switch-connected device such as a desktop or laptop that wants to access the network) asks for permission to join the network
+
+    - Switch sends the request onward to the authentication server
+
+    - Authentication server checks supplicant's credentials and creates a key for the supplicant if it is authorized
+
+    - The created key is used to encrypt traffic between the switch and the supplicant
+
+### Management Access and Authentication
+
+- Switches can be managed and configured in three ways:
+
+    - Secure Shell (SSH)
+
+        - SSH allows for remote configuration of switches
+
+    - Console Port
+
+        - Console Ports allow for local configuration of switches
+
+        - Typically uses a RS232 Serial Cable, also known as a rollover cable, with one end as an RJ45 connector and another end as a DB9 connector
+
+    - Out-of-Band (OOB) Management
+
+        - Keeps all network configuration devices on a separate network
+
+### First-Hop Redundancy
+
+- First-hop Redundancy often uses **Hot Standby Router Protocol** (HSRP) to create virtual IP and MAC addresses to provide active and standby routers
+
+    - HSRP groups consist of an *Active Router* (physical device), a *Standby Router* (physical device), and a *Virtual Router* (logical device)
+
+        - Properly configured computers on the network will only see and send traffic to the Virtual Router
+
+        - The Virtual Router will know which of the two physical routers is Active or Standby, and then send traffic to the appropriate router
+
+    - HSRP is the most popular First-hop Redundancy protocol and used in most networks today, but other First-hop Redundancy protocols include the following:
+
+        - Gateway Load Balancing Protocol (GLBP)
+
+        - Virtual Router Redundancy Protocol (VRRP)
+
+        - Common Address Redundancy
+
+### MAC Filtering
+
+- MAC Filtering permits or denies traffic based on a device's MAC address
+
+    - This filtering occurs at the Datalink Layer (OSI Model Layer 2)
+
+### Traffic Filtering
+
+- Traffic Filtering permits or denies traffic based on IP addresses or application ports
+
+    - If we are filtering by IP addresses, this filtering occurs at the Network Layer (OSI Model Layer 3)
+
+    - If we are filtering by Ports, this filtering occurs at the Transport Layer (OSI Model Layer 4)
+
+### Quality-of-Service (QoS)
+
+- Quality-of-Service allows prioritizing traffic based on device or protocol
+
+    - For example, we might want to prioritize a VoIP phone device or prioritize all UDP traffic in general, because that VoIP phone uses UDP to send datagrams of the user's voice and we don't want their voice cutting in and out during a call, but other TCP traffic on the network can be given a lower priority because TCP handles dropped packets and re-transmissions
+
+## Spanning Tree Protocol (802.1d)
+
+### Overview
+
+- Spanning Tree Protocol (802.1d) permits redundant links between switches and prevents the looping of network traffic
