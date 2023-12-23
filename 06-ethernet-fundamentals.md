@@ -445,3 +445,99 @@
 ### Overview
 
 - Spanning Tree Protocol (802.1d) permits redundant links between switches and prevents the looping of network traffic
+
+### Shortest Path Bridging (SPB)
+
+- Shortest Path Bridging (SPB) is used instead of Spanning Tree Protocol (STP) for larger network environments
+
+### Broadcast Storms
+
+- Broadcast Storms occur when multiple copies of frames are forwarded back and forth, which then consumes the network
+
+    - Spanning Tree Protocol solving the Broadcast Storm problem using root and non-root bridges
+
+### Bridge ID
+
+- The combination of a priority value and a MAC address (of a switch)
+
+- Priority value is based on the category of cabling being used
+
+### Root Bridge
+
+- The Root Bridge is the bridge (technically a switch, which is also known as a multiport bridge) with the lowest bridge ID (BID)
+    
+    - It is elected to act as a reference point for the entire spanning tree
+
+    - Typically if priority values are equal, then the decision on root bridge is made by whichever switch has the lowest MAC address
+
+### Non-Root Bridge
+
+- Non-Root Bridges are all switches in an STP topology other than the Root Bridge
+
+### Root Port
+
+- Every non-root bridge has a single root port which is closest to the root bridge in terms of cost
+
+    - Cost is determined by cable type, with faster cables having a lower cost and slower cables having a higher cost
+
+### Designated Port
+
+- Every network segment has a designated port, which is the closest to the root bridge in terms of cost
+
+    - All of the ports on the root bridge are considered to be designated ports, because they are all on the root bridge and therefore equally close to the root bridge in terms of cost
+
+### Non-Designated Port
+
+- Non-designated ports block traffic to create loop-free topology
+
+    - Non-designated ports still receive the information as *Bridge Protocol Data Units (BPDUs)*, but do not forward the information
+
+    - Non-designated ports can become designated ports if a network segment goes down by transitioning through four states:
+
+        - Blocking
+
+            - BPDUs are received but not forwarded
+
+        - Listening
+
+            - Populates the MAC address table, but does not forward frames
+
+        - Learning
+
+            - Processes BPDUs and determines its own role in the spanning tree
+
+        - Forwarding
+
+            - Forwards frames for operations (becoming either a root port or designated port in the process)
+
+### Link Cost
+
+- Link Cost is associated with the speed of the link - the lower the link's speed, the higher the cost
+
+    - Cost Examples
+
+        - Ethernet
+
+            - 10 Mbps
+
+            - 100 STP Port Cost
+
+        - Fast Ethernet
+
+            - 100 Mbps
+
+            - 19 STP Port Cost
+
+        - Gigabit Ethernet
+
+            - 1 Gbps (1000 Mbps)
+
+            - 4 STP Port Cost
+
+        - 10-Gigabit Ethernet
+
+            - 10 Gbps (10000 Mbps)
+
+            - 2 STP Port Cost
+
+    - Recently costs for cable types have been updated to reflect faster and faster cable types, so do not expect STP Port Costs to remain static, however they will always remain in a highest to lowest order for slowest to fastest cables
