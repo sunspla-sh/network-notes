@@ -541,3 +541,34 @@
             - 2 STP Port Cost
 
     - Recently costs for cable types have been updated to reflect faster and faster cable types, so do not expect STP Port Costs to remain static, however they will always remain in a highest to lowest order for slowest to fastest cables
+
+## Virtual Local Area Networks (VLANs)
+
+### Overview
+
+- Virtual Local Area Networks allow different logical networks to share the same physical hardware and provide additional security and efficiency
+
+    - Different ports can be used for different broadcast domains
+
+### VLAN Trunking (802.1q)
+
+- Multiple VLANs are transmitted over the same physical cable (but in a network diagram, the VLANs are represented by separate logical cables)
+
+#### Trunk
+
+- A **trunk** is the single physical cable carrying multiple VLANs
+
+#### 4-Byte Identifiers
+
+- 4-Byte Identifers are electronic tags that allow us to identify different VLANs going over a single trunk
+
+    - There are two piecies of 4-Byte identifiers:
+
+        - Tag Protocol Identifier (TPI)
+
+        - Tag Control Identifier (TCI)
+
+    - An untagged VLAN is considered to be the **native VLAN** and is also known as **VLAN zero**
+
+## Specialized Network Devices
+
