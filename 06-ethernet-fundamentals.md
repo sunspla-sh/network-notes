@@ -572,3 +572,75 @@
 
 ## Specialized Network Devices
 
+### Overview
+
+- Outside of the standard routers, switches, hubs, bridges, servers, and workstations, there are many specialized network devices (used for less common tasks) such as VPN concentrators, firewalls, proxy servers, content engines, and content switches
+
+### VPN Concentrators
+
+- A *Virtual Private Network* creates virtual tunnels over an untrusted network like the internet
+
+- **VPN Concentrators** are devices that terminate VPN tunnels and allow for multiple VPN connections in one location
+
+    - VPN Concentrators can be separate physical devices or logical devices that are built into other devices like UTMs (Unified Threat Management systems) or Firewalls
+
+    - Most modern Firewalls will have this functionality, but when using this functionality it is considered to be a logical VPN Concentrator and not a Firewall
+
+- **VPN Headends** are a specific type of VPN concentrator used to terminate IPSec VPN tunnels within a router or other device
+
+### Firewalls
+
+- Firewalls are network security appliances placed at the boundary of a network
+
+    - Firewalls can be either software or hardware
+
+    - Firewalls can be either stateful or stateless
+
+- Firewalls allow traffic to go from inside the network to outside the network (e.g. from your office network to the internet) and can also block traffic attempting to come from outside the network to inside the network (e.g. from the internet to your office network)
+
+- On network charts/network diagrams, Firewalls can be identified by three different icons:
+
+    - Pix Firewalls are identified by a **circle icon with a forward-step icon (play symbol with vertical bar after it)**
+
+        - These icons are commonly used by Cisco because Pix is their brand of Firewall
+
+    - Generic Firewalls are identified by a **brick wall icon**
+
+    - Routers with Firewalls are combination devices that are identified by a **standard circular router icon with a brick circular base**
+
+#### Next-Generation Firewalls (NGFWs)
+
+- Next-Generation Firewalls are firewalls that are able to conduct deep packet inspection at Layer 7 and can look through traffic to detect and prevent attacks
+
+- Traditional firewalls will block based on IP Addresses and possibly port and protocol, but Next-Generation Firewalls can look deeping into the traffic to block attacks by continually connecting to cloud resources to get the latest threat information
+
+### Intrusion Detection Systems (IDSs) and Intrusion Prevention Systems (IPSs)
+
+- Intrusion Detection Systems (IDSs) can see and log attack signatures and anomaliesn
+
+- Intrusion Prevention Systems (IPSs) can see and log attack signatures and anomalies like an IDS, but additionally they can respond to attacks through signatures and anomalies
+
+    - IPSs will shut off ports and protocols in an attempt to stop an attack
+
+- IDSs and IPSs can be either host-based or network-based devices
+
+- On network charts/network diagrams, IDSs and IPSs are represented by **square icons with left and right facing arrows going through a circle**
+
+### Proxy Servers
+
+- Proxy Servers make requests to an external network on behalf of a client
+
+    - Proxy Servers can perform content filtering and logging
+
+    - Proxy Servers can also cache content to save bandwidth and time
+
+### Content Engines (Caching Engines)
+
+- Content engines, also known as Caching Engines, are dedicated applications that perform the caching function of a proxy server
+
+    - Content Engines are more efficient that a proxy server when it comes to caching
+
+    - Content Engines are helpful for branch offices with slow internet connections, because data can be sync'd periodically from the main office, and then requested from content engine on the fast internal network of the branch office rather than needing to go over a low bandwidth internet connection back to the head office
+
+- On network charts/network diagrams, Content Engines are identified by **square icons with a database cylinder and three arrows pointing to the cylinder on one side and one arrow point to the cylinder on the other side**
+
