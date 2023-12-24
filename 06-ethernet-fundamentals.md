@@ -326,9 +326,9 @@
 
     - Scalability
 
-### Link Aggregation (IEEE 802.3ad)
+### Link Aggregation Control Protocol (LACP) (IEEE 802.3ad)
 
-- Link Aggregation combines multiple physical connections into a single logical connection to minimize congestion
+- Link Aggregation Control Protocol (LACP) combines multiple physical connections into a single logical connection to minimize congestion
 
     - For example, on a 24 port 100 Mbps switch, we can hit bandwidth limits if more than one connected device is trying to operate at a full 100 Mbps, but there is only one outgoing 100 Mbps connection to another switch
     
@@ -644,3 +644,92 @@
 
 - On network charts/network diagrams, Content Engines are identified by **square icons with a database cylinder and three arrows pointing to the cylinder on one side and one arrow point to the cylinder on the other side**
 
+### Content Switches (Load Balancers)
+
+- Content Switches, also known as Load Balancers, distribute incoming requests across various servers in a server farm
+
+    - Distributing requests across various servers prevents any one server from becoming overloaded
+
+    - Additionally, large tasks can be broken up into smaller tasks and split across servers to speed up the task, after which the content switch/load balancer can recombine the results of the distributed task and send back a response
+
+## Other Devices
+
+### Overview
+
+- Other devices encountered on a network (that are not specialized networking devices required for the network to properly function) include the following:
+
+    - VoIP Phones
+
+    - Printers
+
+    - Access Control Devices
+
+    - Cameras
+
+    - HVACs
+
+    - Internet of Things
+
+    - Industrial Control Systems (ICS)
+
+    - Supervisory Control and Data Acquisition (SCADA)
+
+### VoIP Phones (Voice-over-IP Phones)
+
+- VoIP Phones are hardware devices that connect to an IP network in order to make a connection to a call manager within that same network
+
+#### Unified Communications (or Call) Manager
+
+- Unified Communications Managers are used to perform call processing for hardware and software-based IP phones so that VoIP phones can connect to external or public telephone networks
+
+### Printers
+
+- Printers are hardware devices that convert digital documents into physical, paper documents
+
+- Printers can be directly connected to a computer by USB or connected to a network and shared by multiple users
+
+    - Network printers can be wired or wireless
+
+        - Configuration of Network Printers can be done manually with a static IP Address or by using DHCP (Dynamic Host Configuration Protocol)
+
+### Access Control Devices
+
+- Physical Access Control Devices include devices like security gates, turnstiles, door locks, and others
+
+- These Access Control Devices are often, but not always, connected to a network, which is often its own separate network from the corporate network for additional security
+
+    - If Access Control Devices are connected to a corporate network, they should be placed into their own separate VLAN for additional security controls and safety
+
+### Cameras
+
+- Security Cameras should be connected to a separate security network, often the same network that the Access Control Devices are using
+
+    - Like Access Control Devices, if Security Cameras are connected to the corporate network, then it should be through a separate VLAN for additional security
+
+### Heating, Ventilation, and Air Conditioning (HVAC)
+
+- HVAC systems and sensors can control the heating, ventilation, humidity, and air conditioning of a physical location
+
+    - Like Access Control Devices and Security Cameras, HVAC should be placed on a separate security network or on a VLAN if on the corporate network
+
+    - HVAC systems are especially useful for monitoring the conditions of places that people do not work in daily, such as server rooms and telecommunication closets
+
+### Internet of Things (IoT)
+
+- Internet of Things (IoT) is a catch-all term for any non-standard networked devices such as smart TVs, smart watches, smart refrigerators, smart speakers, smart thermostats, smart doorbells, etc.
+
+    - Like Access Control Devices, Security Cameras and HVAC, Internet of Things devices should be placed on a separate security network or on a VLAN if on the corporate network because they do not typically have strong built-in security by default
+
+### Industrial Control Systems (ICS)
+
+- Industrial Control Systems describes the different types of control systems and associated instrumentation that is used to operate and automate industrial processes
+
+    - The ICS devices are different depending on the type of industry, but typically ICS systems include electronic sensors in equipment that are built specifically to have an effect on the physical world
+
+    - ICS devices should be placed on a separate security network or on a VLAN if on the corporate network because they do not typically have strong built-in security by default
+
+### Supervisory Control and Data Acquisition (SCADA)
+
+- Supervisory Control and Data Acquisition (SCADA) systems acquire and transmit data from different systems to a central panel for monitoring and control
+
+    - SCADA devices should be placed on a separate security network or on a VLAN if on the corporate network because they do not typically have strong built-in security by default
