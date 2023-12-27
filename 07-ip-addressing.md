@@ -118,7 +118,7 @@
 
             - No default possible hosts
 
-        - *Class D addresses Multicast Addresses, which are reserved for multicast or multicast routing*
+        - *Class D addresses are Multicast Addresses, which are reserved for multicast or multicast routing*
 
             - *Multicast Addresses are logical identifiers for a group of hosts in a computer network*
 
@@ -292,3 +292,19 @@
 - Subinterfaces are virtual interfaces that are created by dividing up one physical interface into multiple logical interfaces
 
 ## IPV4 Data Flows
+
+### Three Types of IPV4 Data Flows
+
+- There are three different ways data can flow using the IPV4 protocol:
+
+    - Unicast
+
+        - Data travels from a single source to a single destination
+
+    - Multicast
+
+        - Data travels from a single source to multiple (but specific) destination devices
+
+    - Broadcast
+
+        - Data travels from a single source to all devices on a network
