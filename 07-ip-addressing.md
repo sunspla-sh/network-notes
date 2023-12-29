@@ -308,3 +308,83 @@
     - Broadcast
 
         - Data travels from a single source to all devices on a network
+
+## Assigning IP Addresses
+
+### Overview
+
+- There are two methods for assigning IP addresses
+
+    - Static
+
+        - Manually typing in the IP address for the host, its subnet mask, default gateway, and DNS server
+
+    - Dynamic
+
+        - Programmatically assigning IP addresses when hosts join a network
+
+- Regardless of the method chosen for assigning an IP address, the following 4 components are required
+
+    - IP Address
+
+    - Subnet Mask
+
+    - Default Gateway
+
+        - Typically this is the IP address of your router
+
+    - Server Address
+
+        - This is for either DNS or WINS
+
+#### Domain Name System (DNS)
+
+- Domain Name System (DNS) is a system that converts domain names used by websites to the IP addresses of their servers
+
+#### Windows Internet Name Service (WINS)
+
+- Windows Internet Name Service (WINS) is a system that identifies NetBIOS systems on a TCP/IP network and converts those NetBIOS names to IP addresses
+
+    - Similar to DNS, but only works on Windows environments and networks
+
+### Dynamic IP Address Assignment Methods
+
+- There are 4 common methods of dynamically assigning IP addresses
+
+    - Bootstrap Protocol (BOOTP)
+
+        - Bootstrap Protocol (BOOTP) dynamically assigns IP addresses and allows a workstation to load a copy of their boot image over the network
+
+        - Originally introduced in 1985 for use in diskless UNIX workstations because it could dynamically assign IP addresses and then allow the workstation to load a copy of a boot image over a network
+
+        - Used a static database of IP addresses and MAC addresses, where the connecting client would be issued an IP address by a server based on the result of the server looking up the client's MAC address in the database
+
+        - The oldest and least used of the options
+
+    - Dynamic Host Configuration Protocol (DHCP)
+
+        - Dynamic Host Configuration Protocol (DHCP) assigns an IP address to clients based on an assignable scope or pool of addresses and provides the ability to configure and assign other options such as the subnet mask, default gateway (IP address), and DNS/WINS server (IP address)
+
+        - Each IP is leased by a client for a period of time and returns to the pool when the lease expires
+
+        - Originally introduced in 1993 to replace BOOTP
+
+        - Commonly used in modern networks
+
+    - APIPA
+
+        - Automatic Private IP Addressing (APIPA) is used when a device does not have a static IP address, cannot reach a DHCP server, or the DHCP server has run out of assignable addresses
+
+            - Assigned from the 169.254 scope
+
+            - For example, if 10 computers are all connected through a switch with no configuration, APIPA will allow them to each pick their own IP address from the 169.254 range (which by default is a Class B Address), so they will all be automatically able to communicate with eachother
+
+            - APIPA does not assign a default gateway, so a computer that has been automatically configured with APIPA cannot reach external networks (such as the Internet)
+
+    - Zero Configuration (ZeroConf)
+
+        - Zero Configuration (ZeroConf) is based on APIPA, but with additional features
+
+            - Assigns IPV4 link-local addresses to clients
+
+            - Resolves computer names to IP addresses without DNS by using mDNS (multicast domain name service)
