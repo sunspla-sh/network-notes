@@ -388,3 +388,28 @@
             - Assigns IPV4 link-local addresses to clients
 
             - Resolves computer names to IP addresses without DNS by using mDNS (multicast domain name service)
+
+            - Performs service discovery on a network
+
+                - For example, ZeroConf can find printers, scanners, and shared file systems
+
+        - There are often different implementations of ZeroConf with different names depending on the product line. Some will be listed below in the following format:
+
+                PRODUCT LINE
+
+                    ZEROCONF IMPLEMENTATION NAME
+
+            - Apple
+
+                - Bonjour
+
+            - Windows
+
+                - Link-Local Multicast Name Resolution (LLMNR)
+
+            - Linux
+
+                - SystemD (System Daemon Service)
+
+                    - Specifically, the **systemd-resolved** background service within SystemD
+
