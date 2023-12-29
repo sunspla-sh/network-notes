@@ -422,3 +422,12 @@
             - Specifically, the **systemd-resolved** background service within SystemD
 
 ## Computer Mathematics
+
+### Overview
+
+- Computers count in binary, not decimal
+
+- Figure out how to count in binary on your own, I'm not showing you how to do it here
+
+## Subnetting
+
