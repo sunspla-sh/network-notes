@@ -353,63 +353,72 @@
 
     - Bootstrap Protocol (BOOTP)
 
-        - Bootstrap Protocol (BOOTP) dynamically assigns IP addresses and allows a workstation to load a copy of their boot image over the network
-
-        - Originally introduced in 1985 for use in diskless UNIX workstations because it could dynamically assign IP addresses and then allow the workstation to load a copy of a boot image over a network
-
-        - Used a static database of IP addresses and MAC addresses, where the connecting client would be issued an IP address by a server based on the result of the server looking up the client's MAC address in the database
-
-        - The oldest and least used of the options
-
     - Dynamic Host Configuration Protocol (DHCP)
 
-        - Dynamic Host Configuration Protocol (DHCP) assigns an IP address to clients based on an assignable scope or pool of addresses and provides the ability to configure and assign other options such as the subnet mask, default gateway (IP address), and DNS/WINS server (IP address)
-
-        - Each IP is leased by a client for a period of time and returns to the pool when the lease expires
-
-        - Originally introduced in 1993 to replace BOOTP
-
-        - Commonly used in modern networks
-
-    - APIPA
-
-        - Automatic Private IP Addressing (APIPA) is used when a device does not have a static IP address, cannot reach a DHCP server, or the DHCP server has run out of assignable addresses
-
-            - Assigned from the 169.254 scope
-
-            - For example, if 10 computers are all connected through a switch with no configuration, APIPA will allow them to each pick their own IP address from the 169.254 range (which by default is a Class B Address), so they will all be automatically able to communicate with eachother
-
-            - APIPA does not assign a default gateway, so a computer that has been automatically configured with APIPA cannot reach external networks (such as the Internet)
+    - Automatic Private IP Addressing (APIPA)
 
     - Zero Configuration (ZeroConf)
 
-        - Zero Configuration (ZeroConf) is based on APIPA, but with additional features
+#### Bootstrap Protocol (BOOTP)
 
-            - Assigns IPV4 link-local addresses to clients
+- Bootstrap Protocol (BOOTP) dynamically assigns IP addresses and allows a workstation to load a copy of their boot image over the network
 
-            - Resolves computer names to IP addresses without DNS by using mDNS (multicast domain name service)
+- Originally introduced in 1985 for use in diskless UNIX workstations because it could dynamically assign IP addresses and then allow the workstation to load a copy of a boot image over a network
 
-            - Performs service discovery on a network
+- Used a static database of IP addresses and MAC addresses, where the connecting client would be issued an IP address by a server based on the result of the server looking up the client's MAC address in the database
 
-                - For example, ZeroConf can find printers, scanners, and shared file systems
+- The oldest and least used of the options
 
-        - There are often different implementations of ZeroConf with different names depending on the product line. Some will be listed below in the following format:
+#### Dynamic Host Configuration Protocol (DHCP)
 
-                PRODUCT LINE
+- Dynamic Host Configuration Protocol (DHCP) assigns an IP address to clients based on an assignable scope or pool of addresses and provides the ability to configure and assign other options such as the subnet mask, default gateway (IP address), and DNS/WINS server (IP address)
 
-                    ZEROCONF IMPLEMENTATION NAME
+- Each IP is leased by a client for a period of time and returns to the pool when the lease expires
 
-            - Apple
+- Originally introduced in 1993 to replace BOOTP
 
-                - Bonjour
+- Commonly used in modern networks
 
-            - Windows
+#### Automatic Private IP Addressing (APIPA)
 
-                - Link-Local Multicast Name Resolution (LLMNR)
+- Automatic Private IP Addressing (APIPA) is used when a device does not have a static IP address, cannot reach a DHCP server, or the DHCP server has run out of assignable addresses
 
-            - Linux
+    - Assigned from the 169.254 scope
 
-                - SystemD (System Daemon Service)
+    - For example, if 10 computers are all connected through a switch with no configuration, APIPA will allow them to each pick their own IP address from the 169.254 range (which by default is a Class B Address), so they will all be automatically able to communicate with eachother
 
-                    - Specifically, the **systemd-resolved** background service within SystemD
+    - APIPA does not assign a default gateway, so a computer that has been automatically configured with APIPA cannot reach external networks (such as the Internet)
 
+#### Zero Configuration (ZeroConf)
+
+- Zero Configuration (ZeroConf) is based on APIPA, but with additional features
+
+    - Assigns IPV4 link-local addresses to clients
+
+    - Resolves computer names to IP addresses without DNS by using mDNS (multicast domain name service)
+
+    - Performs service discovery on a network
+
+        - For example, ZeroConf can find printers, scanners, and shared file systems
+
+- There are often different implementations of ZeroConf with different names depending on the product line. Some will be listed below in the following format:
+
+        PRODUCT LINE
+
+            ZEROCONF IMPLEMENTATION NAME
+
+    - Apple
+
+        - Bonjour
+
+    - Windows
+
+        - Link-Local Multicast Name Resolution (LLMNR)
+
+    - Linux
+
+        - SystemD (System Daemon Service)
+
+            - Specifically, the **systemd-resolved** background service within SystemD
+
+## Computer Mathematics
