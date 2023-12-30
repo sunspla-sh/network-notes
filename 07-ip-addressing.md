@@ -431,3 +431,121 @@
 
 ## Subnetting
 
+### Overview
+
+- Subnetting is the process of taking a larger network and splitting it into smaller networks
+
+- The default classful subnet is rarely the optimal subnet size for our network
+
+    - We use subnet masks to modify subnets and create better scoped networks
+
+### Subnet Classes Review
+
+- The three classes of subnets are listed below in the following format
+
+
+      ADDRESS CLASS
+
+          DEFAULT SUBNET MASK
+
+          ASSIGNABLE IP CALCULATION
+
+          ASSIGNABLE IP ADDRESSES
+
+  - Class A
+
+      - 255.0.0.0
+
+      - 2<sup>24</sup> - 2
+
+      - 16,777,214
+
+  - Class B
+
+      - 255.255.0.0
+
+      - 2<sup>16</sup> - 2
+
+      - 65,534
+
+  - Class C
+
+      - 255.255.255.0
+
+      - 2<sup>8</sup> - 2
+
+      - 254
+
+- When working with IPV4, the number of assignable IP addresses as hosts subtracts two addresses, because the first address in the range is used as the network ID and the final address in the range is used as the broadcast ID (so neither of them can be used as host addresses)
+
+    - This rule does NOT apply to IPV6, which is allowed to assign the full range of addresses in a subnet as host addresses
+
+### Classless Subnet Example
+
+- Assume we have a network 192.168.1.0/26, which has a default subnet mask of 255.255.255.0 represented by /24 in CIDR notation
+
+    - The /26 means that we are borrowing two bits additional from the host portion of the address instead of using the default subnet mask of /24
+
+    - The number of available subnets is 2 raised to the number of borrowed bits, so 2<sup>2</sup> in this case, which is 4 total subnets
+
+    - Each of those subnets has 2<sup>32 - CIDR</sup> IP addresses, so 2<sup>32 - 26</sup> or 2<sup>6</sup> in this case, which is 64 total addresses
+
+        - However, the first address in the range is always the network ID and the last address in the range is the broadcast ID, neither of which are available to be assigned to hosts, so that means we only have 64 - 2 = 62 total assignable IP addresses in the subnet
+
+### Variable-Length Subnet Mask (VLSM)
+
+- Allows subnets of various sizes to be used and requires a routing protocol that supports it such as the following
+
+    - Routing Information Protocol (RIP)
+
+    - Open Shortest Path First (OSPF)
+
+    - Intermediate System - Intermediate System (IS-IS)
+
+    - Enhanced Interior Gateway Routing Protocol (EIGRP)
+
+    - Border Gateway Protocol (BGP)
+
+- In simplified terms, Variable-Length Subnet Masking is a subnetting of subnets
+
+## Subnetting Practice
+
+### Practice #1
+
+- A new office location has been assigned the range of 10.10.10.0/24. Configure subnets for each department in the new office using CIDR notation and provide the minimum number of IP addresses that will meet their needs. The departments are listed below:
+
+    - 54 - IT
+
+    - 32 - Instructors
+
+    - 5 - Sales
+
+    - 3 - Admin
+
+    - X - Unused
+
+- The CIDR notation solutions for the departments are listed below:
+
+    - IT - /26
+
+    - Instructors - /26
+
+    - Sales - /29
+
+    - Admin - /29
+
+    - Unused - /26
+
+### Practice #2
+
+- How many assignable IP addresses exist in the network 172.16.1.0/27?
+
+    - 30 assignable IP addresses exist in the network 172.16.1.0/27 (because we have 32 IP addresses in the range, but need to subtract 2 for the network ID and the broadcast ID)
+
+### Practice #3
+
+- How many assignable IP addresses exist in the network 192.168.1.0/28?
+
+    - 14 assignable IP addresses exist in the network 192.168.1.0/28 (because we have 16 IP addresses in the range, but need to subtract 2 for the network ID and the broadcast ID)
+
+## Subnetting by Hand
