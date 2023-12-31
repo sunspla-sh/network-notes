@@ -549,3 +549,261 @@
     - 14 assignable IP addresses exist in the network 192.168.1.0/28 (because we have 16 IP addresses in the range, but need to subtract 2 for the network ID and the broadcast ID)
 
 ## Subnetting by Hand
+
+### Non-Standard Subnets
+
+- A /31 subnet is a non-standard subnet supported by Cisco routers (and some non-Cisco routers) for point-to-point connections between two routers when network ID and broadcast ID addresses are not required
+
+- A /32 subnet is just a single IP address, and on a class C network there would be 256 subnets in /32 with one IP address each
+
+### Subnetting Examples
+
+- Determine the network ID, first host address, last host address, and broadcast ID from the following network address 171.129.67.160/25
+
+    - /25 means that there are 2 subnets of 128 IP addresses each
+
+    - The first subnet is from 171.129.67.0 to 171.129.67.127
+
+    - The second subnet is from 171.129.67.128 to 171.129.67.255
+
+    - Our network address falls within the second subnet, so the network ID is 171.129.67.128, the first host address is 171.129.67.129, the last host address is 171.129.67.254, and the broadcast ID is 171.129.67.255
+
+- Determine the network ID, first host address, last host address, and broadcast ID from the following network address 56.187.210.21/28
+
+    - /28 means that there are 16 subnets of 16 IP addresses each
+
+    - The first subnet is from 56.187.210.0 to 56.187.210.15
+
+    - The second subnet is from 56.187.210.16 to 56.187.210.31
+
+    - The third subnet is from 56.187.210.32 to 56.187.210.47
+
+    - The fourth subnet is from 56.187.210.48 to 56.187.210.63
+
+    - The remaining subnets can be calculated in a similar manner by counting up in groups of 16 addresses and are left as an exercise to the reader...
+
+    - Our network address falls within the second subnet, so the network ID is 56.187.210.16, the first host address is 56.187.210.17, the last host address is 56.187.210.30, and the broadcast ID is 56.187.210.31
+
+## IPV6 Addressing
+
+### Overview
+
+- IPV4 has 2<sup>32</sup> available addresses, which is approximately 4.2 billion IP addresses
+
+    - These are almost all in use nowadays, causing a problem known as **address exhaustion**
+
+    - In 1995, the Internet Engineering Task Force (IETF) began developing the IPV6 standard when it was clear that IPV4 would eventually run out of addresses
+
+        - The Request For Comment (RFC) document for IPV6 was originally termed IP Next Generation (IPng)
+
+- IPV6 has 2<sup>128</sup> available addresses, which is approximately 340 undecillion IP addresses
+
+    - IPV5 was skipped as an experimental protocol, but some of its concepts were incorporated into IPV6
+
+### Benefits of IPV6
+
+- There are many benefits of using IPV6 rather than IPV4
+
+    - Larger address space
+
+        - This is because of the 128-bit addresses
+
+    - No broadcasts
+
+        - This improves the efficiency of networks
+
+    - No fragmentation
+
+        - This improves security and reduces overhead processing
+
+        - Also removes the MTU discovery process for each session
+
+    - Backwards compatible with IPV4
+
+        - Can coexist with IPV4 on the same network
+
+    - Simplified Header
+
+        - There are only 8 header fields in IPV6
+
+            - This is in contrast to the 12 header fields of IPV4
+
+        - This improves the efficiency of networks
+
+### What is Dual-Stack Equipment?
+
+- Dual-Stack Equipment is equipment (network devices) that runs both IPV4 and IPV6 protocols simultaneously
+
+    - If a network device supports IPV6, a dual-stack router will prefer that protocol for communication, but can also communicate over IPV4 if necessary for devices that do not support IPV6
+
+### What is Tunneling?
+
+- Tunneling allows an existing IPV4 router to carry IPV6 traffic
+
+    - IPV6 packets will be encapsulated within IPV4 headers and then carried by IPV4 routers over IPV4 networks
+
+        - Point-to-point tunnels will be created between the source and destination, which allows isolated IPV6 clients and servers to communicate with eachother without needing to upgrade all of the routers and switch infrastructure that exists between them
+
+### IPV6 Headers
+
+- There are 8 header fields in IPV6 (as opposed to the 12 headers of IPV4):
+
+    - Version
+
+    - Traffic Class
+
+    - Flow Label
+
+    - Payload Length
+
+    - Next Header
+
+    - Hop Limit
+
+    - Source IP Address
+
+    - Destination Address
+
+### IPV6 Address Formatting
+
+- As IPV6 Addresses are 128 bits in length, it is impractical to display them in binary (128 digits) or in dotted decimal notation (16 octets)
+
+- The Internet Engineering Task Force (IETF) determined that the best option for displaying IPV6 Addresses was hexadecimal notation
+
+    - In hexadecimal, each digit represents 4 bits, which allows us to display a 128 bit IPV6 Address in 32 hexadecimal digits
+
+    - IPV6 Addresses combine 4 hexadecimal digits into a group known as a **segment** (which contains 16 bits), and then repeats the process for all 128 bits of the address, giving us 8 segments in total
+
+- IPV6 Address shorthand rules allow a segment with four zeros to be concatenated into a single zero
+
+    - For example, 2018:0000:0000:0000:0000:0000:4815:54ae can be represented as 2018:0:0:0:0:0:4815:54ae
+
+- IPV6 Address shorthand rules allow multiple segments that only contain zeros to be represented by a double colon (::), but this shorthand can only be used once in an IPV6 address
+
+    - For example, 2018:0000:0000:0000:0000:0000:4815:54ae can be represented as 2018::4815:54ae
+
+### IPV6 Address Types
+
+- There are 3 different IPV6 Address types
+
+    - Unicast Addresses
+
+    - Multicast Addresses
+
+    - Anycast Addresses
+
+- Unlike IPV4, we can assign multiple IPV6 addresses to a single interface on a client, and these IPV6 addresses can be a mixture of any of the 3 different types of IPV6 addresses
+
+#### Unicast Addresses
+
+- Unicast Addreses are used to identify a single interface and can be broken down into two categories
+
+    - Globally-Routed
+
+        - Similar to IPV4's unicast class A, B, and C addresses
+
+        - **Begins with 2000-3999**
+
+    - Link-Local (Local Use)
+
+        - Similar to IPV4's private IP ranges in that it can only be used on a local area network
+
+        - Begins with FE80 (as the first segment)
+
+        - Whenever an IPV6 system starts up, it will create an FE80 Link-Local Address for each IPV6 interface on that system, even if a Globally-Routed address was already obtained for that interface through manual configuration or through a configuration protocol such as DHCP
+
+            - This automatic FE80 Link-Local Address configuration occurs through **Stateless Address Autoconfiguration (SLAAC)**
+
+#### Stateless Address Autoconfiguration (SLAAC)
+
+- Stateless Address Autoconfiguration elimates the need for hosts to obtain addresses or other configuration information from a central server
+
+- Hosts can independently select Link-Local Addresses, test the uniqueness of that Link-Local Address, assign the Link-Local Addresses to themselves, contact the router, and provide direction to the node about how to proceed with the autoconfiguration
+
+    - The host can even configure the global unicast address that it prefers to use (assuming that it is available for use)
+
+#### Extended Unique Identifier (EUI)
+
+- The Extended Unique Identifier process allows a host to assign itself a unique 64-bit IPV6 interface identifier called an EUI-64
+
+    - This EUI-64 is obtained from the 48-bit MAC address of the network interface
+
+        - The 48-bit MAC address is first separated into two 24-bit portions
+
+            - The first 24-bit portion contains the Organizational Unique Identifier (OUI)
+
+            - The second 24-bit portion contains the Network Interface Card (NIC) number
+
+        - Between the two 24-bit portions of the divided 48-bit MAC address, we add a hexadecimal value of FF EE, giving us a 64-bit Extended Unique Identifier
+
+    - After obtaining the EUI-64, the network interface uses autodiscovery to determine the network it is on and adds the 64-bit network portion of the IPV6 address to the front of the EUI-64 to create a unicast globally-routable IPV6 address
+
+- DHCP can be used in IPV6 as an alternative to SLAAC and EUI-64 if preferred, however the DHCPv6 protocol needs to be used for compatibility with IPV6
+
+    - DHCPv6 Protocol allows DHCP to automatically assign addresses from a DHCPv6 server
+
+#### Neighbor Discovery Protocol (NDP)
+
+- Neighbor Discovery Protocol allows hosts to learn the Datalink Layer (OSI Model Layer 2) addresses on a given network for the following purposes:
+
+    - Router Solicitation
+
+        - Used to locate routers on a network to determine default gateway
+
+    - Router Advertisement
+
+        - Routers can advertise themselves using NDP as an alternative to router solicitation by hosts
+
+    - Neighbor Solicitation
+
+        - Used to locate other clients on a given network and determine how to communicate with them directly
+
+    - Neighbor Advertisement
+
+        - Clients can advertise themselves (and the services that they offer) using NDP as an alternative to neighbor solicitation by hosts
+
+    - Redirection
+
+        - Routers can inform hosts that there are better first-hop routers on the network to use instead of themselves, which increases the overall efficiency of the network
+
+### Multicast Addresses
+
+- Multicast Addresses are used to identify a set of interfaces
+
+    - **Begins with FF** (as the first two digits within the first segment)
+
+- Packets send to a multicast address will be distributed to all of the interfaces within that group
+
+### Anycast Addresses
+
+- Anycast Addresses are used to identify a set of interfaces so that a packet can be sent to any member of a set
+
+    - Anycast Addresses are allocated from the unicast address space, so theres no way to determine if an IPV6 address is anycast or unicast just by looking at the IPV6 address
+
+## IPV6 Data Flows
+
+### Overview
+
+- IPV4 had unicast, multicast, and broadcast data flows
+
+- IPV6 keeps unicast and multicast data flows, but eliminates broadcast data flows in favor of anycast data flows
+
+#### Unicast
+
+- Works as it did in IPV4, but uses IPV6 addresses instead of IPV4 addresses
+
+#### Multicast
+
+- Works as it did in IPV4, but uses IPV6 addresses instead of IPV4 addresses
+
+    - Server addresses the packets to the multicast group, which starts with **FF** as the first two digits of the first segment in IPV6, and the switch will distribute additional copies to all of the receipients in the multicast group
+
+#### Anycast
+
+- Data travels from a single source to the device nearest to multiple (but specific) destination devices
+
+    - Anycast is designed to let one host initiate an efficient updating of router tables for a group of other hosts
+
+        - IPV6 is able to determine which gateway the host is closest to and send the packets to that gateway as though it was a unicast communication
+
+        - The gateway sends the packets through anycast to any other hosts in the group until all of the routing tables are updated
