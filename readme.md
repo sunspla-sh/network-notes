@@ -19,3 +19,7 @@
 - [05: Media and Cabling](./05-media-and-cabling.md)
 
 - [06: Ethernet Fundamentals](./06-ethernet-fundamentals.md)
+
+- [07: IP Addressing](./07-ip-addressing.md)
+
+- [08: Routing](./08-routing.md)
