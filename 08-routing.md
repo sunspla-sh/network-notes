@@ -136,3 +136,17 @@
         - Link bandwidth available
 
         - Other criteria depending on the specific dynamic routing protocol
+
+### Preventing Routing Loops
+
+- There are two commonly used methods of preventing routing loops
+
+    - Split Horizon
+
+        - Prevents a route that has been learned on one interface from being advertised back out that same interface
+
+        - Similar to how Spanning Tree Protocol (STP) works with switches
+
+    - Poison Reverse
+
+        - Causes a route that has been received on one interface to be advertised back out that same interface with a very high cost (so that it would almost never be chosen as the most efficient path)
